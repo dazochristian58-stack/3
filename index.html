@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Mikko Child Learning Center Inc.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HOMEPAGE CONTAINER -->
+    <div class="main-container" id="homeContainer">
+        <div class="poster-section">
+            <div class="poster-header">
+                LITTLE MIKKO CHILD LEARNING CENTER INC.
+            </div>
+            <div class="poster-content">
+                <div class="poster-left-col">
+                    <div>
+                        <div class="school-year-banner">2023–2024</div>
+                        <h1 class="school-admission-title">SCHOOL<br>ADMISSION</h1>
+                        <div class="registration-sub">Now Open For Registration</div>
+                    </div>
+
+                    <div class="offer-section">
+                        <div class="offer-label">WE OFFER:</div>
+                        
+                        <div class="program-item">
+                            <div>
+                                <div class="program-name">NURSERY</div>
+                                <div class="program-age">• 3 yrs old</div>
+                            </div>
+                        </div>
+
+                        <div class="program-item">
+                            <div>
+                                <div class="program-name">PRE-KINDER</div>
+                                <div class="program-age">• 4 yrs old</div>
+                            </div>
+                        </div>
+
+                        <div class="program-item">
+                            <div>
+                                <div class="program-name">KINDER</div>
+                                <div class="program-age">• 5 yrs old</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="enrol-now-btn" onclick="openModal('registerModal')">ENROL NOW</button>
+
+                    <div class="contact-strip">
+                        <div class="phone-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div>
+                            <div>09088600513</div>
+                            <div>09209670209</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="poster-right-col">
+                    <div class="school-logo-badge">
+                        <img src="https://i.imgur.com/7YV4m3k.png" alt="School Logo" onerror="this.src='https://via.placeholder.com/60'">
+                    </div>
+
+                    <div class="photo-collage">
+                        <div class="collage-row-1">
+                            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=500&auto=format&fit=crop&q=60" alt="Students">
+                        </div>
+                        <div class="collage-row-2">
+                            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=300&auto=format&fit=crop&q=60" alt="Classroom">
+                            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=300&auto=format&fit=crop&q=60" alt="Kids activity">
+                        </div>
+                        <div class="collage-row-3">
+                            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=300&auto=format&fit=crop&q=60" alt="Chefs kids">
+                            <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=300&auto=format&fit=crop&q=60" alt="Graduation">
+                        </div>
+                    </div>
+
+                    <div class="carousel-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="portal-section">
+            <div class="portal-block">
+                <h2>REGISTER ONLINE</h2>
+                <p>Access our online admission link and learn about our enrollment procedure</p>
+                <button class="portal-btn register-action-btn" onclick="openModal('registerModal')">REGISTER</button>
+            </div>
+
+            <div class="portal-block">
+                <h2>USER LOGIN</h2>
+                <p>Access your personal account</p>
+                <button class="portal-btn login-action-btn" onclick="openModal('loginModal')">LOGIN</button>
+            </div>
+
+            <div class="portal-footer-info">
+                <strong>Location:</strong> P. Nadres St. Brgy. Angeles Zone 2<br>
+                <strong>Telephone:</strong> 09088600513 / 09209670209<br>
+                <strong>Email:</strong> obetraydispalacio@gmail.com
+            </div>
+        </div>
+    </div>
+
+    <!-- REGISTER MODAL -->
+    <div class="modal-overlay" id="registerModal">
+        <div class="modal-card wide-card">
+            <button class="close-modal" onclick="closeModal('registerModal')">&times;</button>
+            <h2 class="dark-modal-title" style="color: #144521;">Student Online Registration</h2>
+            <p class="dark-modal-sub" style="color: #666;">Fill out your details to apply for admission.</p>
+            
+            <form onsubmit="handleRegister(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="regName" required placeholder="Enter student's full name">
+                    </div>
+                    <div class="form-group">
+                        <label>Age</label>
+                        <input type="number" id="regAge" required placeholder="Age">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Program Applying For</label>
+                        <select id="regProgram">
+                            <option>Nursery (3 yrs old)</option>
+                            <option>Pre-Kinder (4 yrs old)</option>
+                            <option>Kinder (5 yrs old)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Parent / Guardian</label>
+                        <input type="text" id="regParent" required placeholder="Parent's Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Contact Number</label>
+                    <input type="text" id="regContact" required placeholder="Mobile Number">
+                </div>
+                <button type="submit" class="modal-submit-btn">Submit Registration</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- LOGIN MODAL -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-card dark-modal-card">
+            <button class="close-modal dark-close" onclick="closeModal('loginModal')">&times;</button>
+            <h2 class="dark-modal-title">Portal Login</h2>
+            <p class="dark-modal-sub">Select account type to enter portal.</p>
+            
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label class="dark-label">Select Account Type</label>
+                    <select id="loginRole" class="dark-input" style="background: rgba(255,255,255,0.1); color: white;">
+                        <option value="student" style="color: #333;">Student / Parent Account</option>
+                        <option value="teacher" style="color: #333;">Teacher Account</option>
+                        <option value="admin" style="color: #333;">Admin Account</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="dark-label">Username / Email</label>
+                    <input type="text" id="loginUser" class="dark-input" required placeholder="e.g. admin, teacher, student">
+                </div>
+                <div class="form-group">
+                    <label class="dark-label">Password</label>
+                    <input type="password" id="loginPass" class="dark-input" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="dark-submit-btn">LOGIN</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- STUDENT & PARENT PORTAL -->
+    <div class="dashboard-container" id="studentDashboard">
+        <div class="custom-dash-layout">
+            <div class="dash-sidebar">
+                <div class="dash-sidebar-top">
+                    <div class="dash-sidebar-logo">
+                        <img src="https://i.imgur.com/7YV4m3k.png" alt="Logo" onerror="this.src='https://via.placeholder.com/50'">
+                    </div>
+                    <div class="dash-nav-icons">
+                        <button class="nav-icon-btn active" onclick="switchStudentTab('studentHomeTab', this)" title="Home / Overview"><i class="fas fa-home"></i></button>
+                        <button class="nav-icon-btn" onclick="switchStudentTab('studentCalendarTab', this)" title="Announcements & Calendar"><i class="fas fa-calendar-alt"></i></button>
+                        <button class="nav-icon-btn" onclick="switchStudentTab('studentBillingTab', this)" title="Tuition & Payment Portal"><i class="fas fa-file-invoice-dollar"></i></button>
+                        <button class="nav-icon-btn" onclick="switchStudentTab('studentMilestoneTab', this)" title="Developmental Tracking"><i class="fas fa-child"></i></button>
+                        <button class="nav-icon-btn" onclick="switchStudentTab('studentReportTab', this)" title="Report Card"><i class="fas fa-award"></i></button>
+                        <button class="nav-icon-btn" onclick="switchStudentTab('studentMessageTab', this)" title="Messaging"><i class="fas fa-comments"></i></button>
+                    </div>
+                </div>
+                <div class="dash-sidebar-bottom"></div>
+            </div>
+
+            <div class="dash-main-content">
+                <div class="dash-topbar">
+                    <div class="dash-title-area">
+                        <h1>STUDENT & PARENT PORTAL</h1>
+                    </div>
+                    <div class="dash-topbar-icons">
+                        <button class="topbar-action-icon"><i class="fas fa-bell"></i></button>
+                        
+                        <div class="profile-dropdown-container">
+                            <button class="topbar-action-icon" onclick="toggleProfileMenu(event, 'profileDropdownMenu')" title="Profile Menu">
+                                <i class="fas fa-user-circle"></i>
+                            </button>
+                            <div class="profile-dropdown-menu" id="profileDropdownMenu">
+                                <a href="javascript:void(0)" onclick="handleProfileClick()"><i class="fas fa-user"></i> Profile</a>
+                                <a href="javascript:void(0)" onclick="handleSettingsClick()"><i class="fas fa-cog"></i> Settings</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="javascript:void(0)" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="studentHomeTab" class="student-module-section active">
+                    <div class="dash-grid-body">
+                        <div class="dash-left-column">
+                            <div class="dash-section-box">
+                                <h2 class="dash-section-title">Today</h2>
+                                <div class="today-card-content">
+                                    <div class="today-subjects-list">
+                                        <div class="subject-day-label">Monday Subjects:</div>
+                                        <div class="subject-item-row">• Early Math & Counting</div>
+                                        <div class="subject-item-row">• Alphabet & Phonics</div>
+                                        <div class="subject-item-row">• Creative Art & Coloring</div>
+                                    </div>
+                                    <div>
+                                        <div class="today-date-badge">October 9, 2026</div>
+                                        <div class="today-photo-banner">
+                                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&auto=format&fit=crop&q=60" alt="Class activities">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dash-section-box">
+                                <h2 class="dash-section-title">Featured</h2>
+                                <div class="featured-cards-row">
+                                    <div class="featured-main-banner">
+                                        <h3>School Fun Day & Outdoor Play</h3>
+                                        <p>Join us this Friday for our interactive learning games and fun physical education session at the main courtyard.</p>
+                                    </div>
+                                    <div class="school-gallery-card" onclick="alert('Opening photo gallery...')">
+                                        <i class="fas fa-images"></i>
+                                        <h4>School Gallery</h4>
+                                        <span>View memories</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dash-right-column">
+                            <div class="right-widget-card">
+                                <div class="right-widget-title">Quick Grades</div>
+                                <div class="grades-table-row"><span>Alphabet & Phonics</span><span>95 (A)</span></div>
+                                <div class="grades-table-row"><span>Early Math</span><span>92 (A)</span></div>
+                                <div class="grades-table-row"><span>Creative Art</span><span>98 (S)</span></div>
+                            </div>
+
+                            <div class="right-widget-card">
+                                <div class="right-widget-title">Financial Balance</div>
+                                <div class="financial-line">Status: <strong>Paid / Up-to-Date</strong></div>
+                                <div class="financial-line">Next Due: <strong>Nov 15, 2026</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="studentCalendarTab" class="student-module-section">
+                    <div class="table-card" style="color: #333;">
+                        <h3>School Announcements & Upcoming Events</h3>
+                        <div style="background: #f9f9f9; padding: 15px; border-left: 4px solid #144521; margin-bottom: 15px; border-radius: 4px;">
+                            <h4 style="color: #144521; margin-bottom: 5px;"><i class="fas fa-bullhorn"></i> Parent-Teacher Quarterly Conference</h4>
+                            <p style="font-size: 0.85rem; color: #555;">Join us this coming October 20, 2026, for individual progress consultations with class advisers.</p>
+                            <span style="font-size: 0.75rem; color: #888;">Posted: Oct 8, 2026</span>
+                        </div>
+                        <div style="background: #f9f9f9; padding: 15px; border-left: 4px solid #d4af37; margin-bottom: 15px; border-radius: 4px;">
+                            <h4 style="color: #144521; margin-bottom: 5px;"><i class="fas fa-calendar-day"></i> School Foundation Sports Fest</h4>
+                            <p style="font-size: 0.85rem; color: #555;">Wear sports uniforms on October 25, 2026, for our indoor games and physical coordination drills.</p>
+                            <span style="font-size: 0.75rem; color: #888;">Posted: Oct 5, 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="studentBillingTab" class="student-module-section">
+                    <div class="table-card" style="color: #333; margin-bottom: 20px;">
+                        <h3>Tuition Fee Statement & Account Ledger</h3>
+                        <div class="table-responsive">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Fee Description</th>
+                                        <th>Due Date</th>
+                                        <th>Amount Due</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>First Quarter Tuition Fee</td>
+                                        <td>Aug 15, 2026</td>
+                                        <td>₱12,500</td>
+                                        <td><span class="status-badge approved">Paid</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Second Quarter Tuition Fee</td>
+                                        <td>Nov 15, 2026</td>
+                                        <td>₱12,500</td>
+                                        <td><span class="status-badge pending">Pending</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="table-card" style="color: #333; background: #eef5f0;">
+                        <h3><i class="fas fa-credit-card"></i> Online Payment Portal</h3>
+                        <p style="font-size: 0.85rem; margin-bottom: 15px; color: #555;">Settle your account balance securely via GCash, Credit Card, or Bank Transfer.</p>
+                        <form onsubmit="handlePayment(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label style="font-size: 0.8rem; font-weight:750; color:#144521;">Payment Method</label>
+                                    <select class="dark-input" style="color:#333; background:#fff;">
+                                        <option>GCash Mobile Wallet</option>
+                                        <option>Credit / Debit Card (Visa/Mastercard)</option>
+                                        <option>BPI / BDO Online Banking</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label style="font-size: 0.8rem; font-weight:750; color:#144521;">Amount to Pay (₱)</label>
+                                    <input type="number" value="12500" required class="dark-input" style="color:#333; background:#fff;">
+                                </div>
+                            </div>
+                            <button type="submit" class="logout-btn" style="background: #144521; color: white; padding: 10px 20px; font-weight: 800;">Proceed with Secure Payment</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="studentMilestoneTab" class="student-module-section">
+                    <div class="table-card" style="color: #333;">
+                        <h3>Child Developmental Milestone Tracking</h3>
+                        <p style="font-size: 0.85rem; color: #666; margin-bottom: 15px;">Evaluated quarterly by your child's adviser based on early childhood standards.</p>
+                        <div class="table-responsive">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Developmental Domain</th>
+                                        <th>Milestone Skill Competency</th>
+                                        <th>Teacher Assessment Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Fine Motor Skills</td>
+                                        <td>Holding crayons properly, tracing shapes, and cutting with safety scissors.</td>
+                                        <td><span class="status-badge approved">Mastered</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Language & Communication</td>
+                                        <td>Expressing needs clearly, reciting simple nursery rhymes, answering questions.</td>
+                                        <td><span class="status-badge approved">Mastered</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Social & Emotional</td>
+                                        <td>Sharing toys, playing cooperatively during group activities, taking turns.</td>
+                                        <td><span class="status-badge approved">Mastered</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cognitive & Math</td>
+                                        <td>Counting numbers 1-20, identifying primary colors and basic geometric shapes.</td>
+                                        <td><span class="status-badge approved">Mastered</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="studentReportTab" class="student-module-section">
+                    <div class="table-card" style="color: #333;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h3>Quarterly Academic Report Card</h3>
+                            <button class="logout-btn" style="background: #144521; color: white;" onclick="alert('Downloading PDF report card...')"><i class="fas fa-download"></i> Download Report Card</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Learning Area / Subject</th>
+                                        <th>1st Quarter</th>
+                                        <th>2nd Quarter</th>
+                                        <th>Remarks</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Alphabet & Phonics</td>
+                                        <td>95 (A)</td>
+                                        <td>-</td>
+                                        <td>Excellent progress in letter sounds</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Early Math & Number Concepts</td>
+                                        <td>92 (A)</td>
+                                        <td>-</td>
+                                        <td>Demonstrates great counting skills</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Creative Arts & Expression</td>
+                                        <td>98 (S)</td>
+                                        <td>-</td>
+                                        <td>Very creative and enthusiastic</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="studentMessageTab" class="student-module-section">
+                    <div class="table-card" style="color: #333;">
+                        <h3>Direct Teacher / School Messaging</h3>
+                        <p style="font-size: 0.85rem; color: #666; margin-bottom: 15px;">Send inquiries or concerns directly to your child's adviser or school administration.</p>
+                        
+                        <div style="background: #f9f9f9; padding: 15px; border-radius: 6px; margin-bottom: 15px; max-height: 250px; overflow-y: auto;">
+                            <div style="margin-bottom: 10px;">
+                                <strong style="color: #144521;">Teacher Anna Reyes (Adviser):</strong>
+                                <p style="font-size: 0.85rem; background: #eef5f0; padding: 8px; border-radius: 6px; margin-top: 3px;">Hello! Sophia did wonderful during today's art project.</p>
+                                <span style="font-size: 0.7rem; color: #888;">Yesterday at 2:30 PM</span>
+                            </div>
+                        </div>
+
+                        <form onsubmit="handleSendMessage(event)">
+                            <div class="form-group">
+                                <textarea rows="3" placeholder="Type your message to the teacher or school admin..." required class="dark-input" style="color:#333; background:#fff;"></textarea>
+                            </div>
+                            <button type="submit" class="logout-btn" style="background: #144521; color: white;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- TEACHER PORTAL -->
+    <div class="dashboard-container" id="teacherDashboard">
+        <div class="custom-dash-layout">
+            <div class="dash-sidebar">
+                <div class="dash-sidebar-top">
+                    <div class="dash-sidebar-logo">
+                        <img src="https://i.imgur.com/7YV4m3k.png" alt="Logo" onerror="this.src='https://via.placeholder.com/50'">
+                    </div>
+                    <div class="dash-nav-icons">
+                        <button class="nav-icon-btn active" onclick="switchTeacherTab('teacherHomeTab', this)" title="Classroom Overview"><i class="fas fa-chalkboard-teacher"></i></button>
+                        <button class="nav-icon-btn" onclick="switchTeacherTab('teacherAttendanceTab', this)" title="Daily Logs / Attendance"><i class="fas fa-calendar-check"></i></button>
+                        <button class="nav-icon-btn" onclick="switchTeacherTab('teacherClassRecordTab', this)" title="Class Record"><i class="fas fa-clipboard-list"></i></button>
+                        <button class="nav-icon-btn" onclick="switchTeacherTab('teacherMilestoneTab', this)" title="Developmental Milestone Tracker"><i class="fas fa-brain"></i></button>
+                        <button class="nav-icon-btn" onclick="switchTeacherTab('teacherPortfolioTab', this)" title="Portfolio Management"><i class="fas fa-folder-open"></i></button>
+                    </div>
+                </div>
+                <div class="dash-sidebar-bottom"></div>
+            </div>
+
+            <div class="dash-main-content">
+                <div class="dash-topbar">
+                    <div class="dash-title-area">
+                        <h1>TEACHER PORTAL</h1>
+                        <span>Adviser: Teacher Anna Reyes | Section: Sunflower (Nursery)</span>
+                    </div>
+                    <div class="dash-topbar-icons">
+                        <button class="topbar-action-icon"><i class="fas fa-bell"></i></button>
+                        
+                        <div class="profile-dropdown-container">
+                            <button class="topbar-action-icon" onclick="toggleProfileMenu(event, 'teacherProfileDropdownMenu')" title="Profile Menu">
+                                <i class="fas fa-user-circle"></i>
+                            </button>
+                            <div class="profile-dropdown-menu" id="teacherProfileDropdownMenu">
+                                <a href="javascript:void(0)" onclick="handleProfileClick()"><i class="fas fa-user"></i> Profile</a>
+                                <a href="javascript:void(0)" onclick="handleSettingsClick()"><i class="fas fa-cog"></i> Settings</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="javascript:void(0)" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TEACHER HOME / OVERVIEW -->
+                <div id="teacherHomeTab" class="teacher-module-section active">
+                    <div class="teacher-stats-row">
+                        <div class="stat-card">
+                            <div class="stat-label">Total Enrolled</div>
+                            <div class="stat-value">18</div>
+                        </div>
+                        <div class="stat-card gold">
+                            <div class="stat-label">Present Today</div>
+                            <div class="stat-value">16</div>
+                        </div>
+                        <div class="stat-card danger">
+                            <div class="stat-label">Absent / Sick</div>
+                            <div class="stat-value">1</div>
+                        </div>
+                        <div class="stat-card info">
+                            <div class="stat-label">Portfolios Uploaded</div>
+                            <div class="stat-value">42</div>
+                        </div>
+                    </div>
+
+                    <div class="dash-grid-body">
+                        <div class="dash-left-column">
+                            <div class="table-card" style="color: #333;">
+                                <h3>Today's Learning Schedule</h3>
+                                <div class="today-card-content" style="background: #eef5f0; padding: 15px; border-radius: 8px;">
+                                    <div class="today-subjects-list">
+                                        <div class="subject-day-label" style="color: #144521; font-weight: 800;">Section Sunflower (8:00 AM - 11:00 AM)</div>
+                                        <div class="subject-item-row" style="color: #333;">• 08:00 AM - Circle Time & Alphabet Chant</div>
+                                        <div class="subject-item-row" style="color: #333;">• 09:00 AM - Fine Motor Skill: Cutting & Tracing</div>
+                                        <div class="subject-item-row" style="color: #333;">• 10:00 AM - Snack & Cooperative Play</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="table-card" style="color: #333;">
+                                <h3>Recent Student Submissions & Activity</h3>
+                                <p style="font-size: 0.85rem; color: #666; margin-bottom: 12px;">Worksheets and developmental photos awaiting teacher feedback.</p>
+                                <ul style="list-style: none; font-size: 0.85rem;">
+                                    <li style="padding: 8px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;">
+                                        <span><strong>Sophia Reyes</strong> uploaded Color Wheel Painting</span>
+                                        <span style="color: #888;">Today 9:15 AM</span>
+                                    </li>
+                                    <li style="padding: 8px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;">
+                                        <span><strong>Ethan Cruz</strong> completed Math Counting Exercise</span>
+                                        <span style="color: #888;">Yesterday</span>
+                                    </li>
+                                    <li style="padding: 8px 0; display: flex; justify-content: space-between;">
+                                        <span><strong>Mia Santos</strong> submitted Speech Practice Audio</span>
+                                        <span style="color: #888;">Oct 7, 2026</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="dash-right-column">
+                            <div class="right-widget-card">
+                                <div class="right-widget-title">Quick Actions</div>
+                                <button class="logout-btn" style="width: 100%; margin-bottom: 10px; background: #144521; color: white;" onclick="switchTeacherTab('teacherAttendanceTab', document.querySelectorAll('.dash-nav-icons .nav-icon-btn')[1])"><i class="fas fa-check-circle"></i> Take Attendance</button>
+                                <button class="logout-btn" style="width: 100%; margin-bottom: 10px; background: #d4af37; color: #144521;" onclick="switchTeacherTab('teacherClassRecordTab', document.querySelectorAll('.dash-nav-icons .nav-icon-btn')[2])"><i class="fas fa-plus"></i> Enter Grades</button>
+                                <button class="logout-btn" style="width: 100%; background: #2c3e50; color: white;" onclick="openModal('uploadPortfolioModal')"><i class="fas fa-upload"></i> Upload Student Work</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DAILY LOGS / ATTENDANCE MODULE -->
+                <div id="teacherAttendanceTab" class="teacher-module-section">
+                    <div class="table-card" style="color: #333; margin-bottom: 20px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
+                            <h3><i class="fas fa-calendar-check" style="color: #144521;"></i> Daily Attendance Tracker</h3>
+                            <div style="display: flex; gap: 10px; align-items: center;">
+                                <label style="font-size: 0.85rem; font-weight: 700; color: #144521;">Select Date:</label>
+                                <input type="date" value="2026-10-09" style="padding: 6px 10px; border: 1px solid #ccc; border-radius: 5px;">
+                                <button class="logout-btn" style="background: #144521; color: white;" onclick="alert('Attendance saved successfully!')"><i class="fas fa-save"></i> Save Attendance</button>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Student ID</th>
+                                        <th>Student Name</th>
+                                        <th>Program / Section</th>
+                                        <th>Attendance Status</th>
+                                        <th>Teacher Remarks</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>NUR-2026-001</td>
+                                        <td><strong>Sophia Reyes</strong></td>
+                                        <td>Nursery - Sunflower</td>
+                                        <td>
+                                            <div class="attendance-btn-group">
+                                                <button class="att-btn present active" onclick="setAttendance(this)">P</button>
+                                                <button class="att-btn absent" onclick="setAttendance(this)">A</button>
+                                                <button class="att-btn late" onclick="setAttendance(this)">L</button>
+                                                <button class="att-btn excused" onclick="setAttendance(this)">E</button>
+                                            </div>
+                                        </td>
+                                        <td><input type="text" placeholder="Add note..." style="width: 100%; padding: 4px; border: 1px solid #ddd; border-radius: 4px;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>NUR-2026-002</td>
+                                        <td><strong>Ethan Cruz</strong></td>
+                                        <td>Nursery - Sunflower</td>
+                                        <td>
+                                            <div class="attendance-btn-group">
+                                                <button class="att-btn present active" onclick="setAttendance(this)">P</button>
+                                                <button class="att-btn absent" onclick="setAttendance(this)">A</button>
+                                                <button class="att-btn late" onclick="setAttendance(this)">L</button>
+                                                <button class="att-btn excused" onclick="setAttendance(this)">E</button>
+                                            </div>
+                                        </td>
+                                        <td><input type="text" placeholder="Add note..." style="width: 100%; padding: 4px; border: 1px solid #ddd; border-radius: 4px;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>NUR-2026-003</td>
+                                        <td><strong>Mia Santos</strong></td>
+                                        <td>Nursery - Sunflower</td>
+                                        <td>
+                                            <div class="attendance-btn-group">
+                                                <button class="att-btn present" onclick="setAttendance(this)">P</button>
+                                                <button class="att-btn absent active" onclick="setAttendance(this)">A</button>
+                                                <button class="att-btn late" onclick="setAttendance(this)">L</button>
+                                                <button class="att-btn excused" onclick="setAttendance(this)">E</button>
+                                            </div>
+                                        </td>
+                                        <td><input type="text" value="Slight fever according to parent" style="width: 100%; padding: 4px; border: 1px solid #ddd; border-radius: 4px;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>NUR-2026-004</td>
+                                        <td><strong>Lucas Gonzales</strong></td>
+                                        <td>Nursery - Sunflower</td>
+                                        <td>
+                                            <div class="attendance-btn-group">
+                                                <button class="att-btn present" onclick="setAttendance(this)">P</button>
+                                                <button class="att-btn absent" onclick="setAttendance(this)">A</button>
+                                                <button class="att-btn late active" onclick="setAttendance(this)">L</button>
+                                                <button class="att-btn excused" onclick="setAttendance(this)">E</button>
+                                            </div>
+                                        </td>
+                                        <td><input type="text" value="Arrived at 8:30 AM" style="width: 100%; padding: 4px; border: 1px solid #ddd; border-radius: 4px;"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="table-card" style="color: #333; background: #eef5f0;">
+                        <h3><i class="fas fa-book-reader" style="color: #144521;"></i> Daily Classroom Teaching Log</h3>
+                        <form onsubmit="event.preventDefault(); alert('Daily log recorded successfully!');">
+                            <div class="form-group">
+                                <label style="font-weight: 700; color: #144521; display: block; margin-bottom: 5px;">Summary of Activities & Lessons Taught Today</label>
+                                <textarea rows="4" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;" placeholder="Write daily lesson highlights, student observations, or group activities completed today..."></textarea>
+                            </div>
+                            <button type="submit" class="logout-btn" style="background: #144521; color: white;">Save Daily Log</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- CLASS RECORD MODULE -->
+                <div id="teacherClassRecordTab" class="teacher-module-section">
+                    <div class="table-card" style="color: #333;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
+                            <h3><i class="fas fa-clipboard-list" style="color: #144521;"></i> Class Record & Grade Book</h3>
+                            <div style="display: flex; gap: 10px;">
+                                <select style="padding: 6px 10px; border: 1px solid #ccc; border-radius: 5px; font-weight: 700;">
+                                    <option>1st Quarter</option>
+                                    <option>2nd Quarter</option>
+                                    <option>3rd Quarter</option>
+                                    <option>4th Quarter</option>
+                                </select>
+                                <button class="logout-btn" style="background: #144521; color: white;" onclick="alert('Grades saved and calculated!')"><i class="fas fa-save"></i> Calculate & Save</button>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Student Name</th>
+                                        <th>Written Tasks (20%)</th>
+                                        <th>Performance Tasks (50%)</th>
+                                        <th>Quarterly Exam (30%)</th>
+                                        <th>Initial Grade</th>
+                                        <th>Transmuted Grade</th>
+                                        <th>Remarks</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Sophia Reyes</strong></td>
+                                        <td><input type="number" value="94" style="width: 60px; padding: 4px; border: 1px solid #ccc; border-radius: 4px;"></td>
+                                        <td><input type="number" value="96" style="width: 60px; padding: 4px; border: 1px solid #ccc; border-radius: 4px;"></td>
+                                        <td><input type="number" value="92" style="width: 60px; padding: 4px; border: 1px solid #ccc; border-radius: 4px;"></td>
+                                        <td><strong>94.4%</strong></td>
+                                        <td><span class="status-badge approved">95 (Outstanding)</span></td>
+                                        <td>Passed</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Ethan Cruz</strong></td>
+                                        <td><input type="number" value="88" style="width: 60px; padding: 4px; border: 1px solid #ccc; border-radius: 4px;"></td>
+                                        <td><input type="number" value="92" style="width: 60px; padding: 4px; border: 1px solid #ccc; border-radius: 4px;"></td>
+                                        <td><input type="number" value="90" style="width: 60px; padding: 4px; border: 1px solid #ccc; border-radius: 4px;"></td>
+                                        <td><strong>90.6%</strong></td>
+                                        <td><span class="status-badge approved">92 (Very Good)</span></td>
+                                        <td>Passed</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Mia Santos</strong></td>
+                                        <td><input type="number" value="85" style="width: 60px; padding: 4px; border: 1px solid #ccc; border-radius: 4px;"></td>
+                                        <td><input type="number" value="88" style="width: 60px; padding: 4px; border: 1px solid #ccc; border-radius: 4px;"></td>
+                                        <td><input type="number" value="86" style="width: 60px; padding: 4px; border: 1px solid #ccc; border-radius: 4px;"></td>
+                                        <td><strong>86.8%</strong></td>
+                                        <td><span class="status-badge approved">89 (Satisfactory)</span></td>
+                                        <td>Passed</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DEVELOPMENTAL MILESTONE TRACKER MODULE -->
+                <div id="teacherMilestoneTab" class="teacher-module-section">
+                    <div class="table-card" style="color: #333;">
+                        <h3 style="margin-bottom: 5px;"><i class="fas fa-brain" style="color: #144521;"></i> Developmental Milestone Tracker</h3>
+                        <p style="font-size: 0.85rem; color: #666; margin-bottom: 15px;">Evaluate early childhood competencies across key growth domains.</p>
+                        
+                        <div class="sub-tab-bar">
+                            <button class="sub-tab-btn active" onclick="switchMilestoneSubTab('motorSkillsTab', this)"><i class="fas fa-running"></i> Motor Skills</button>
+                            <button class="sub-tab-btn" onclick="switchMilestoneSubTab('speechSkillsTab', this)"><i class="fas fa-comments"></i> Speech & Language</button>
+                            <button class="sub-tab-btn" onclick="switchMilestoneSubTab('specialSkillsTab', this)"><i class="fas fa-star"></i> Special & Social Skills</button>
+                        </div>
+
+                        <!-- MOTOR SKILLS SUB TAB -->
+                        <div id="motorSkillsTab" class="sub-tab-content active">
+                            <div class="table-responsive">
+                                <table class="admin-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Student Name</th>
+                                            <th>Fine Motor (Scissors & Crayons)</th>
+                                            <th>Gross Motor (Jumping & Balance)</th>
+                                            <th>Hand-Eye Coordination</th>
+                                            <th>Evaluation Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Sophia Reyes</strong></td>
+                                            <td><select style="padding: 4px; border-radius: 4px;"><option>Mastered</option><option>Developing</option><option>Needs Support</option></select></td>
+                                            <td><select style="padding: 4px; border-radius: 4px;"><option>Mastered</option><option>Developing</option><option>Needs Support</option></select></td>
+                                            <td><select style="padding: 4px; border-radius: 4px;"><option>Mastered</option><option>Developing</option><option>Needs Support</option></select></td>
+                                            <td><span class="status-badge approved">Excellent</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Ethan Cruz</strong></td>
+                                            <td><select style="padding: 4px; border-radius: 4px;"><option>Developing</option><option>Mastered</option><option>Needs Support</option></select></td>
+                                            <td><select style="padding: 4px; border-radius: 4px;"><option>Mastered</option><option>Developing</option><option>Needs Support</option></select></td>
+                                            <td><select style="padding: 4px; border-radius: 4px;"><option>Mastered</option><option>Developing</option><option>Needs Support</option></select></td>
+                                            <td><span class="status-badge approved">On Track</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- SPEECH & LANGUAGE SUB TAB -->
+                        <div id="speechSkillsTab" class="sub-tab-content">
+                            <div class="table-responsive">
+                                <table class="admin-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Student Name</th>
+                                            <th>Phonics Pronunciation</th>
+                                            <th>Expressive Vocabulary</th>
+                                            <th>Listening & Instruction Following</th>
+                                            <th>Evaluation Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Sophia Reyes</strong></td>
+                                            <td><select style="padding: 4px; border-radius: 4px;"><option>Mastered</option><option>Developing</option></select></td>
+                                            <td><select style="padding: 4px; border-radius: 4px;"><option>Mastered</option><option>Developing</option></select></td>
+                                            <td><select style="padding: 4px; border-radius: 4px;"><option>Mastered</option><option>Developing</option></select></td>
+                                            <td><span class="status-badge approved">Mastered</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Ethan Cruz</strong></td>
+                                            <td><select style="padding: 4px; border-radius: 4px;"><option>Mastered</option><option>Developing</option></select></td>
+                                            <td><select style="padding: 4px; border-radius: 4px;"><option>Mastered</option><option>Developing</option></select></td>
+                                            <td><select style="padding: 4px; border-radius: 4px;"><option>Developing</option><option>Mastered</option></select></td>
+                                            <td><span class="status-badge pending">Developing</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- SPECIAL & SOCIAL SKILLS SUB TAB -->
+                        <div id="specialSkillsTab" class="sub-tab-content">
+                            <div class="table-responsive">
+                                <table class="admin-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Student Name</th>
+                                            <th>Sharing & Peer Cooperation</th>
+                                            <th>Emotional Regulation</th>
+                                            <th>Task Focus / Concentration</th>
+                                            <th>Evaluation Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Sophia Reyes</strong></td>
+                                            <td><select style="padding: 4px; border-radius: 4px;"><option>Mastered</option><option>Developing</option></select></td>
+                                            <td><select style="padding: 4px; border-radius: 4px;"><option>Mastered</option><option>Developing</option></select></td>
+                                            <td><select style="padding: 4px; border-radius: 4px;"><option>Mastered</option><option>Developing</option></select></td>
+                                            <td><span class="status-badge approved">Mastered</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Mia Santos</strong></td>
+                                            <td><select style="padding: 4px; border-radius: 4px;"><option>Mastered</option><option>Developing</option></select></td>
+                                            <td><select style="padding: 4px; border-radius: 4px;"><option>Developing</option><option>Mastered</option></select></td>
+                                            <td><select style="padding: 4px; border-radius: 4px;"><option>Mastered</option><option>Developing</option></select></td>
+                                            <td><span class="status-badge approved">On Track</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- PORTFOLIO MANAGEMENT MODULE -->
+                <div id="teacherPortfolioTab" class="teacher-module-section">
+                    <div class="table-card" style="color: #333;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
+                            <h3><i class="fas fa-folder-open" style="color: #144521;"></i> Student Portfolio Management</h3>
+                            <button class="logout-btn" style="background: #144521; color: white;" onclick="openModal('uploadPortfolioModal')"><i class="fas fa-plus"></i> Upload Student Work</button>
+                        </div>
+
+                        <div class="portfolio-grid">
+                            <div class="portfolio-card">
+                                <img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=400&auto=format&fit=crop&q=60" class="portfolio-img" alt="Artwork">
+                                <div class="portfolio-body">
+                                    <div class="portfolio-title">Primary Colors Finger Painting</div>
+                                    <div class="portfolio-student">Sophia Reyes (Nursery)</div>
+                                    <div class="portfolio-desc">Demonstrates great spatial recognition and fine motor grip control.</div>
+                                    <div class="portfolio-footer">
+                                        <span>Uploaded: Oct 8, 2026</span>
+                                        <span class="status-badge approved">Art & Craft</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-card">
+                                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&auto=format&fit=crop&q=60" class="portfolio-img" alt="Worksheet">
+                                <div class="portfolio-body">
+                                    <div class="portfolio-title">Number Tracing Sheet 1-10</div>
+                                    <div class="portfolio-student">Ethan Cruz (Nursery)</div>
+                                    <div class="portfolio-desc">Pencil stroke stability improved significantly over last week.</div>
+                                    <div class="portfolio-footer">
+                                        <span>Uploaded: Oct 6, 2026</span>
+                                        <span class="status-badge approved">Worksheet</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-card">
+                                <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=400&auto=format&fit=crop&q=60" class="portfolio-img" alt="Group activity">
+                                <div class="portfolio-body">
+                                    <div class="portfolio-title">Building Blocks Tower Building</div>
+                                    <div class="portfolio-student">Mia Santos (Nursery)</div>
+                                    <div class="portfolio-desc">Showed leadership during cooperative team play.</div>
+                                    <div class="portfolio-footer">
+                                        <span>Uploaded: Oct 4, 2026</span>
+                                        <span class="status-badge approved">Social Play</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- UPLOAD PORTFOLIO MODAL -->
+    <div class="modal-overlay" id="uploadPortfolioModal">
+        <div class="modal-card wide-card">
+            <button class="close-modal" onclick="closeModal('uploadPortfolioModal')">&times;</button>
+            <h2 class="dark-modal-title" style="color: #144521;">Upload Student Work / Portfolio</h2>
+            <p class="dark-modal-sub" style="color: #666;">Add artwork, worksheets, or activity photos to the student record.</p>
+            
+            <form onsubmit="handleUploadPortfolio(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Select Student</label>
+                        <select id="portStudent" required>
+                            <option>Sophia Reyes</option>
+                            <option>Ethan Cruz</option>
+                            <option>Mia Santos</option>
+                            <option>Lucas Gonzales</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select id="portCategory">
+                            <option>Art & Craft</option>
+                            <option>Worksheet</option>
+                            <option>Social Play / Photo</option>
+                            <option>Motor Skill Activity</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Activity Title</label>
+                    <input type="text" id="portTitle" required placeholder="e.g. Color Matching Activity">
+                </div>
+                <div class="form-group">
+                    <label>Teacher Observations / Feedback Remarks</label>
+                    <textarea rows="3" id="portDesc" placeholder="Enter notes on child progress..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Upload Work Image / Document</label>
+                    <input type="file" required style="background: #fff;">
+                </div>
+                <button type="submit" class="modal-submit-btn">Upload Portfolio Entry</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ADMIN PORTAL -->
+    <div class="dashboard-container-admin" id="adminDashboard">
+        <header class="dash-header">
+            <div class="dash-logo">LITTLE MIKKO - ADMIN PORTAL</div>
+            <div class="dash-user-info">
+                <span>Administrator</span>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </header>
+        <div class="dash-content">
+            <h2>Admin Dashboard</h2>
+            <p style="margin-top: 10px; color: #666;">Welcome to the administrative portal.</p>
+            <br>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        function switchStudentTab(tabId, btnElement) {
+            document.querySelectorAll('#studentDashboard .student-module-section').forEach(mod => mod.classList.remove('active'));
+            document.querySelectorAll('#studentDashboard .dash-sidebar .nav-icon-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            btnElement.classList.add('active');
+        }
+
+        function switchTeacherTab(tabId, btnElement) {
+            document.querySelectorAll('#teacherDashboard .teacher-module-section').forEach(mod => mod.classList.remove('active'));
+            document.querySelectorAll('#teacherDashboard .dash-sidebar .nav-icon-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            btnElement.classList.add('active');
+        }
+
+        function switchMilestoneSubTab(tabId, btnElement) {
+            document.querySelectorAll('.sub-tab-content').forEach(sub => sub.classList.remove('active'));
+            document.querySelectorAll('.sub-tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            btnElement.classList.add('active');
+        }
+
+        function setAttendance(btn) {
+            const parent = btn.parentElement;
+            parent.querySelectorAll('.att-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const role = document.getElementById('loginRole').value;
+            
+            closeModal('loginModal');
+            document.getElementById('homeContainer').style.display = 'none';
+
+            if (role === 'admin') {
+                document.getElementById('adminDashboard').style.display = 'block';
+            } else if (role === 'teacher') {
+                document.getElementById('teacherDashboard').style.display = 'block';
+            } else {
+                document.getElementById('studentDashboard').style.display = 'block';
+            }
+        }
+
+        function handleRegister(event) {
+            event.preventDefault();
+            alert('Registration submitted successfully!');
+            closeModal('registerModal');
+            document.getElementById('homeContainer').style.display = 'none';
+            document.getElementById('studentDashboard').style.display = 'block';
+        }
+
+        function handlePayment(event) {
+            event.preventDefault();
+            alert('Payment transaction successfully processed! Receipt has been generated.');
+        }
+
+        function handleSendMessage(event) {
+            event.preventDefault();
+            alert('Message sent successfully to school administration / adviser!');
+        }
+
+        function handleUploadPortfolio(event) {
+            event.preventDefault();
+            alert('Portfolio item uploaded successfully to student profile!');
+            closeModal('uploadPortfolioModal');
+        }
+
+        function toggleProfileMenu(event, menuId) {
+            event.stopPropagation();
+            const menu = document.getElementById(menuId);
+            const isVisible = menu.classList.contains('show');
+            
+            document.querySelectorAll('.profile-dropdown-menu').forEach(m => m.classList.remove('show'));
+            
+            if (!isVisible) {
+                menu.classList.add('show');
+            }
+        }
+
+        function handleProfileClick() {
+            alert('Opening Profile details...');
+            document.querySelectorAll('.profile-dropdown-menu').forEach(m => m.classList.remove('show'));
+        }
+
+        function handleSettingsClick() {
+            alert('Opening Account Settings...');
+            document.querySelectorAll('.profile-dropdown-menu').forEach(m => m.classList.remove('show'));
+        }
+
+        window.addEventListener('click', function(e) {
+            document.querySelectorAll('.profile-dropdown-menu').forEach(menu => {
+                if (menu.classList.contains('show')) {
+                    menu.classList.remove('show');
+                }
+            });
+        });
+
+        function logout() {
+            document.querySelectorAll('.profile-dropdown-menu').forEach(m => m.classList.remove('show'));
+            
+            document.getElementById('studentDashboard').style.display = 'none';
+            document.getElementById('teacherDashboard').style.display = 'none';
+            document.getElementById('adminDashboard').style.display = 'none';
+            document.getElementById('homeContainer').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
